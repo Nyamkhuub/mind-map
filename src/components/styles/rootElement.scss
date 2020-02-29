@@ -1,0 +1,23 @@
+@import "./colors.scss";
+%menu_shared {
+	button {
+		background-color: transparent;
+		border: 1px solid $hoverColor;
+		margin: 0px;
+		padding: 5px 20px;
+		&:hover {
+			background-color: $hoverColor;
+		}
+	}
+}
+
+#menu {
+	@extend %menu_shared;
+	display: none;
+}
+#activatedMenu {
+	@extend %menu_shared;
+	display: inline-grid;
+	position: absolute;
+}
+
