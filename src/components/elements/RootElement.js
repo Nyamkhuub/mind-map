@@ -24,12 +24,18 @@ class RootElement extends React.Component {
 			position: null
 		}
 		this.contextMenu = this.contextMenu.bind(this);
+		this.onClickAction = this.onClickAction.bind(this);
 	}
 
 	styleWithPosition(x, y) {
 		return ({
-			top: x,
-			left: y
+			top: y,
+			left: x
+		});
+	}
+	onClickAction() {
+		this.setState({
+			menu: MENU
 		});
 	}
 
@@ -56,10 +62,10 @@ class RootElement extends React.Component {
 				<Stage width={window.innerWidth} height={window.innerHeight}>
 					<Layer>
 						<Rect width={200} height={50} fill={this.state.background} cornerRadius={15}
-							onContextmenu={this.contextMenu}
+							onContextmenu={this.contextMenu} onClick={this.onClickAction}
 							x={window.innerWidth/2 - 100} y={window.innerHeight/2 - 25} />
 						<Text fontSize={this.state.fontSize} text={this.state.title} 
-							onContextmenu={this.contextMenu} onDblclick={this.showAlert}
+							onContextmenu={this.contextMenu} onClick={this.onClickAction}
 							x={window.innerWidth/2 - 65} y={window.innerHeight/2 - 15}
 							fill={this.state.color} padding={5}/>
 					</Layer>

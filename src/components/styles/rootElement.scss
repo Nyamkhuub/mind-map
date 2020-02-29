@@ -1,5 +1,6 @@
 @import "./colors.scss";
 %menu_shared {
+	background-color: $wc;
 	button {
 		background-color: transparent;
 		border: 1px solid $hoverColor;
@@ -19,5 +20,6 @@
 	@extend %menu_shared;
 	display: inline-grid;
 	position: absolute;
+	z-index: 999999;
 }
 
