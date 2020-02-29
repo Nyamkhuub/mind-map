@@ -1,4 +1,4 @@
-#Open source Mind map builder
+# Open source Mind map builder
 
 ## Available Scripts
 
